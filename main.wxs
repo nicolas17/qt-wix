@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Product
+    Name='Line Edits Example'
+    Manufacturer='Nicolas Alvarez'
+    Version='5.2'
+    Id='650A0B3B-303C-4BA4-B85F-237E38DDC2FA'
+    UpgradeCode='8423D2BD-3416-4F5A-8D66-90C6E38276F7'
+    Language='1033'
+    >
+  <Package Id='*' Compressed='yes'/>
+  <Media Id='1' Cabinet="Sample.cab" EmbedCab="yes" CompressionLevel="high"/>
+
+  <Directory Id="TARGETDIR" Name="SourceDir">
+    <Directory Id="ProgramFilesFolder">
+      <Directory Id="PFSubdir" Name="KF5 Experiment"/>
+    </Directory>
+  </Directory>
+
+  <DirectoryRef Id="PFSubdir">
+    <Component Id="lineedit" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
+      <File Name="lineedits.exe" Source="!(bindpath.qt5examples)\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
+    </Component>
+    <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
+      <File Name="qt.conf" Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
+    </Component>
+  </DirectoryRef>
+
+  <Feature Id="Complete" Level="1" AllowAdvertise="no">
+    <ComponentRef Id="qtconf"/>
+    <ComponentRef Id="Qt5Core"/>
+    <ComponentRef Id="Qt5Gui"/>
+    <ComponentRef Id="Qt5Widgets"/>
+    <ComponentRef Id="QtWindowsQPA"/>
+
+    <ComponentRef Id="lineedit"/>
+  </Feature>
+
+  </Product>
+</Wix>

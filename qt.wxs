@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
+  <Fragment>
+    <Component Id="Qt5Core" Directory="PFSubdir" Guid="A1746964-1939-4956-A597-BFF4CBA1EFBA">
+      <File Name="Qt5Core.dll" Source="!(bindpath.qt5)Qt5Core.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+  <Fragment>
+    <Component Id="Qt5Gui" Directory="PFSubdir" Guid="57CC53C0-3B75-4A52-82B6-CF67076C956F">
+      <File Name="Qt5Gui.dll" Source="!(bindpath.qt5)Qt5Gui.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+  <Fragment>
+    <Component Id="Qt5Widgets" Directory="PFSubdir" Guid="58265DF9-A9ED-4C16-B6B9-F1600FA072CA">
+      <File Name="Qt5Widgets.dll" Source="!(bindpath.qt5)Qt5Widgets.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="PFSubdir">
+      <Directory Id="QtPluginsDir" Name="plugins">
+        <Directory Id="QtPlatformPluginsDir" Name="platforms"/>
+      </Directory>
+    </DirectoryRef>
+    <Component Id="QtWindowsQPA" Directory="QtPlatformPluginsDir" Guid="0801502B-1044-4E3E-88B0-04232A1F5EFD">
+      <File Name="qwindows.dll" Source="!(bindpath.qt5plugins)\platforms\qwindows.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+</Wix>
