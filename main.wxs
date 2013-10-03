@@ -15,12 +15,18 @@
     <Directory Id="ProgramFilesFolder">
       <Directory Id="PFSubdir" Name="KF5 Experiment"/>
     </Directory>
+    <Directory Id="StartMenuFolder">
+      <Directory Id="KF5StartMenu" Name="KF5 Experiment"/>
+    </Directory>
   </Directory>
 
   <DirectoryRef Id="PFSubdir">
     <Component Id="lineedit" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
       <File Name="lineedits.exe" Source="!(bindpath.qt5examples)\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
+      <Shortcut Id="MainShortcut" Directory="KF5StartMenu" Name="Line Edit Example" Advertise="yes" />
+      <RemoveFolder Id="KF5StartMenu" Directory="KF5StartMenu" On="uninstall"/>
     </Component>
+
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
       <File Name="qt.conf" Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
     </Component>
