@@ -8,7 +8,7 @@
     UpgradeCode='8423D2BD-3416-4F5A-8D66-90C6E38276F7'
     Language='1033'
     >
-  <Package Id='*' Compressed='yes'/>
+  <Package Id='*' Compressed='yes' InstallScope="perMachine"/>
   <Media Id='1' Cabinet="Sample.cab" EmbedCab="yes" CompressionLevel="high"/>
 
   <Directory Id="TARGETDIR" Name="SourceDir">
