@@ -28,6 +28,11 @@
       <Shortcut Id="lineeditsShortcut" Directory="StartMenuDir" Name="Line Edits" Advertise="yes" />
     </Component>
 
+    <Component Id="animatedtiles" Guid="E9BD5E2A-C24F-4637-96C8-3BA107173F93">
+      <File Source="!(bindpath.qt5)\examples\widgets\animation\animatedtiles\animatedtiles.exe" KeyPath="yes"/>
+      <Shortcut Id="animatedtilesShortcut" Directory="StartMenuDir" Name="Animated Tiles" Advertise="yes" />
+    </Component>
+
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
       <File Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
     </Component>
@@ -41,6 +46,7 @@
     <ComponentRef Id="qwindows.dll"/>
 
     <ComponentRef Id="lineedits"/>
+    <ComponentRef Id="animatedtiles"/>
   </Feature>
 
   </Product>
