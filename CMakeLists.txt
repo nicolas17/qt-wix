@@ -22,4 +22,5 @@ wix_add_product(qt-wix
     LINK_FLAGS
         -b qt5=${QT_PATH}
         -b srcdir="${CMAKE_SOURCE_DIR}"
+        -sice:ICE64
 )
