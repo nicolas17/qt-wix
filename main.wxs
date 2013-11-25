@@ -38,6 +38,11 @@
       <Shortcut Id="subattaqShortcut" Directory="StartMenuDir" Name="Sub-Attaq" Advertise="yes" />
     </Component>
 
+    <Component Id="dombookmarks" Guid="04D27AFA-C8A0-41C7-95A5-D00BC2B19573">
+      <File Source="!(bindpath.qt5)\examples\xml\dombookmarks\dombookmarks.exe" KeyPath="yes"/>
+      <Shortcut Id="dombookmarksShortcut" Directory="StartMenuDir" Name="DOM Bookmarks" Advertise="yes" />
+    </Component>
+
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
       <File Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
     </Component>
@@ -49,6 +54,7 @@
     <ComponentRef Id="Qt5Gui.dll"/>
     <ComponentRef Id="Qt5Widgets.dll"/>
     <ComponentRef Id="Qt5OpenGL.dll"/>
+    <ComponentRef Id="Qt5Xml.dll"/>
 
     <ComponentRef Id="qwindows.dll"/>
     <ComponentRef Id="qjpeg.dll"/>
@@ -56,6 +62,7 @@
     <ComponentRef Id="lineedits"/>
     <ComponentRef Id="animatedtiles"/>
     <ComponentRef Id="subattaq"/>
+    <ComponentRef Id="dombookmarks"/>
   </Feature>
 
   </Product>
