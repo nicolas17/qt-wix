@@ -11,14 +11,12 @@ set(_WIX_VERSIONS 3.9 3.8 3.7 3.6 3.5 3.0)
 
 foreach(_VERSION ${_WIX_VERSIONS})
     # CMake is a 32-bit process, so on 64-bit systems, its access to the
-    # registry is normally redirected to Wow6432Node. However, CMake has
-    # explicit logic to look in the 32-bit or 64-bit registry. The policy for
-    # resolving registry paths is to get the same registry view as the
-    # compiled app would see; in other words, access the 64-bit registry if
-    # we're compiling for 64-bit (according to CMAKE_SIZEOF_VOID_P). However,
-    # this doesn't work for WiX, as we don't care if we get a 32-bit WiX when
-    # compiling 64-bit apps. This is why we need to manually look in both
-    # registry keys.
+    # registry would be normally redirected to Wow6432Node. But CMake has
+    # explicit logic to look the same registry area the compiled app would see;
+    # in other words, it will access the 64-bit registry if we're compiling
+    # for 64-bit (according to CMAKE_SIZEOF_VOID_P).
+    # However, WiX is always 32-bit, and will always be in the 32-bit registry
+    # This is why we need to manually look in both registry keys.
     list(APPEND _REG_SEARCH_PATHS
         "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Microsoft\\Windows Installer XML\\${_VERSION};InstallRoot]"
         "[HKEY_LOCAL_MACHINE\\SOFTWARE\\Wow6432Node\\Microsoft\\Windows Installer XML\\${_VERSION};InstallRoot]"
