@@ -36,10 +36,10 @@
 
   <Feature Id="Complete" Level="1" AllowAdvertise="no">
     <ComponentRef Id="qtconf"/>
-    <ComponentRef Id="Qt5Core"/>
-    <ComponentRef Id="Qt5Gui"/>
-    <ComponentRef Id="Qt5Widgets"/>
-    <ComponentRef Id="QtWindowsQPA"/>
+    <ComponentRef Id="Qt5Core.dll"/>
+    <ComponentRef Id="Qt5Gui.dll"/>
+    <ComponentRef Id="Qt5Widgets.dll"/>
+    <ComponentRef Id="qwindows.dll"/>
 
     <ComponentRef Id="lineedit"/>
   </Feature>
