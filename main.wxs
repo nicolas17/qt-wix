@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Wix xmlns='http://schemas.microsoft.com/wix/2006/wi'>
   <Product
-    Name='Line Edits Example'
+    Name='Qt5 Examples'
     Manufacturer='Nicolas Alvarez'
     Version='5.2'
     Id='650A0B3B-303C-4BA4-B85F-237E38DDC2FA'
@@ -9,24 +9,24 @@
     Language='1033'
     >
   <Package Id='*' Compressed='yes' InstallScope="perMachine"/>
-  <Media Id='1' Cabinet="Sample.cab" EmbedCab="yes" CompressionLevel="high"/>
+  <Media Id='1' Cabinet="Qt.cab" EmbedCab="yes" CompressionLevel="high"/>
 
   <Directory Id="TARGETDIR" Name="SourceDir">
     <Directory Id="ProgramFilesFolder">
-      <Directory Id="PFSubdir" Name="KF5 Experiment">
+      <Directory Id="PFSubdir" Name="Qt5 Examples">
         <Directory Id="QtDir" Name="."/>
       </Directory>
     </Directory>
     <Directory Id="ProgramMenuFolder">
-      <Directory Id="KF5StartMenu" Name="KF5 Experiment"/>
+      <Directory Id="StartMenuDir" Name="Qt5 Examples"/>
     </Directory>
   </Directory>
 
   <DirectoryRef Id="PFSubdir">
     <Component Id="lineedit" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
       <File Name="lineedits.exe" Source="!(bindpath.qt5)\examples\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
-      <Shortcut Id="MainShortcut" Directory="KF5StartMenu" Name="Line Edit Example" Advertise="yes" />
-      <RemoveFolder Id="KF5StartMenu" Directory="KF5StartMenu" On="uninstall"/>
+      <Shortcut Id="MainShortcut" Directory="StartMenuDir" Name="Line Edit Example" Advertise="yes" />
+      <RemoveFolder Id="StartMenuDir" Directory="StartMenuDir" On="uninstall"/>
     </Component>
 
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
