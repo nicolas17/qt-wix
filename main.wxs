@@ -23,9 +23,9 @@
   </Directory>
 
   <DirectoryRef Id="PFSubdir">
-    <Component Id="lineedit" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
+    <Component Id="lineedits" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
       <File Source="!(bindpath.qt5)\examples\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
-      <Shortcut Id="MainShortcut" Directory="StartMenuDir" Name="Line Edit Example" Advertise="yes" />
+      <Shortcut Id="lineeditsShortcut" Directory="StartMenuDir" Name="Line Edits" Advertise="yes" />
     </Component>
 
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
@@ -40,7 +40,7 @@
     <ComponentRef Id="Qt5Widgets.dll"/>
     <ComponentRef Id="qwindows.dll"/>
 
-    <ComponentRef Id="lineedit"/>
+    <ComponentRef Id="lineedits"/>
   </Feature>
 
   </Product>
