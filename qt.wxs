@@ -26,6 +26,11 @@
       <File Source="!(bindpath.qt5)\bin\Qt5OpenGL.dll" KeyPath="yes"/>
     </Component>
   </Fragment>
+  <Fragment>
+    <Component Directory="QtDir" Guid="8BFFCA11-EE2C-4E67-BE9D-2A9BE6577146">
+      <File Source="!(bindpath.qt5)\bin\Qt5Xml.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
 
   <!-- QPA -->
   <Fragment>
