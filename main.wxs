@@ -43,7 +43,9 @@
     <ComponentRef Id="Qt5Core.dll"/>
     <ComponentRef Id="Qt5Gui.dll"/>
     <ComponentRef Id="Qt5Widgets.dll"/>
+
     <ComponentRef Id="qwindows.dll"/>
+    <ComponentRef Id="qjpeg.dll"/>
 
     <ComponentRef Id="lineedits"/>
     <ComponentRef Id="animatedtiles"/>

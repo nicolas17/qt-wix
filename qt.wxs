@@ -27,12 +27,18 @@
     <DirectoryRef Id="QtDir">
       <Directory Id="QtPluginsDir" Name="plugins">
         <Directory Id="QtPlatformPluginsDir" Name="platforms"/>
+        <Directory Id="QtImagePluginsDir" Name="imageformats"/>
       </Directory>
     </DirectoryRef>
   </Fragment>
   <Fragment>
     <Component Directory="QtPlatformPluginsDir" Guid="0801502B-1044-4E3E-88B0-04232A1F5EFD">
       <File Source="!(bindpath.qt5)\plugins\platforms\qwindows.dll" KeyPath="yes"/>
+    </Component>
+  </Fragment>
+  <Fragment>
+    <Component Directory="QtImagePluginsDir" Guid="9E4C68E2-2049-4457-A016-529094953A60">
+      <File Source="!(bindpath.qt5)\plugins\imageformats\qjpeg.dll" KeyPath="yes"/>
     </Component>
   </Fragment>
 </Wix>
