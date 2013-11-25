@@ -7,7 +7,7 @@
 # notice and this notice are preserved.  This file is offered as-is,
 # without any warranty.
 
-set(_WIX_VERSIONS 4.0 3.9 3.8 3.7 3.6 3.5 3.0)
+set(_WIX_VERSIONS 3.9 3.8 3.7 3.6 3.5 3.0)
 
 foreach(_VERSION ${_WIX_VERSIONS})
     # CMake is a 32-bit process, so on 64-bit systems, its access to the
