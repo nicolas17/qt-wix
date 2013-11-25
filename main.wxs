@@ -33,6 +33,11 @@
       <Shortcut Id="animatedtilesShortcut" Directory="StartMenuDir" Name="Animated Tiles" Advertise="yes" />
     </Component>
 
+    <Component Id="subattaq" Guid="DF0192A4-E5F3-4889-8AEE-637BC7F5EB14">
+      <File Source="!(bindpath.qt5)\examples\widgets\animation\sub-attaq\sub-attaq.exe" KeyPath="yes"/>
+      <Shortcut Id="subattaqShortcut" Directory="StartMenuDir" Name="Sub-Attaq" Advertise="yes" />
+    </Component>
+
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
       <File Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
     </Component>
@@ -50,6 +55,7 @@
 
     <ComponentRef Id="lineedits"/>
     <ComponentRef Id="animatedtiles"/>
+    <ComponentRef Id="subattaq"/>
   </Feature>
 
   </Product>
