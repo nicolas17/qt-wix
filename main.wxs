@@ -9,7 +9,7 @@
     Language='1033'
     >
   <Package Id='*' Compressed='yes' InstallScope="perMachine"/>
-  <Media Id='1' Cabinet="Qt.cab" EmbedCab="yes" CompressionLevel="high"/>
+  <Media Id='1' Cabinet="Qt.cab" EmbedCab="yes" CompressionLevel="none"/>
 
   <Directory Id="TARGETDIR" Name="SourceDir">
     <Directory Id="ProgramFilesFolder">
