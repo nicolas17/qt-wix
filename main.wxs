@@ -43,6 +43,7 @@
     <ComponentRef Id="Qt5Core.dll"/>
     <ComponentRef Id="Qt5Gui.dll"/>
     <ComponentRef Id="Qt5Widgets.dll"/>
+    <ComponentRef Id="Qt5OpenGL.dll"/>
 
     <ComponentRef Id="qwindows.dll"/>
     <ComponentRef Id="qjpeg.dll"/>
