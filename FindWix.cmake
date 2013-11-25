@@ -40,7 +40,7 @@ find_program(WIX_CANDLE_PATH candle.exe PATHS ${WIX_PATH} NO_DEFAULT_PATH)
 find_program(WIX_LIGHT_PATH  light.exe  PATHS ${WIX_PATH} NO_DEFAULT_PATH)
 find_program(WIX_LIT_PATH    lit.exe    PATHS ${WIX_PATH} NO_DEFAULT_PATH)
 
-function(_WIX_COMPILE source wixobj flags)
+function(_WIX_COMPILE wixobj source flags)
     get_filename_component(source ${source} ABSOLUTE)
     get_filename_component(basename ${source} NAME_WE)
     set(OUTPUT_WIXOBJ "${basename}.wixobj")
@@ -55,12 +55,12 @@ function(_WIX_COMPILE source wixobj flags)
 endfunction()
 
 function(WIX_ADD_PRODUCT target_name)
-    CMAKE_PARSE_ARGUMENTS(WIX_AP "" "" "SOURCES;COMPILE_FLAGS;LINK_FLAGS;DEPENDS" ${ARGN})
+    CMAKE_PARSE_ARGUMENTS(_WIX_AP "" "" "SOURCES;COMPILE_FLAGS;LINK_FLAGS;DEPENDS" ${ARGN})
 
-    set(_objs "")
-    foreach(source ${WIX_AP_SOURCES})
-        _WIX_COMPILE(${source} _obj "${WIX_AP_COMPILE_FLAGS}")
-        set(_objs ${_objs} ${_obj})
+    set(objs "")
+    foreach(source ${_WIX_AP_SOURCES})
+        _WIX_COMPILE(obj ${source} "${_WIX_AP_COMPILE_FLAGS}")
+        set(objs ${objs} ${obj})
     endforeach()
 
     set(msi_name "${target_name}.msi")
@@ -68,8 +68,8 @@ function(WIX_ADD_PRODUCT target_name)
     add_custom_command(
         OUTPUT ${msi_name} ${basename}.wixpdb
         COMMAND "${WIX_LIGHT_PATH}"
-        ARGS -nologo -out "${msi_name}" ${WIX_AP_LINK_FLAGS} ${_objs}
-        DEPENDS ${_objs} ${WIX_AP_DEPENDS}
+        ARGS -nologo -out "${msi_name}" ${_WIX_AP_LINK_FLAGS} ${objs}
+        DEPENDS ${objs} ${_WIX_AP_DEPENDS}
     )
     add_custom_target(${target_name} ALL DEPENDS ${msi_name})
 endfunction()
