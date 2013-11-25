@@ -24,12 +24,12 @@
 
   <DirectoryRef Id="PFSubdir">
     <Component Id="lineedit" Guid="53E2B752-C8E3-49A3-B093-B1C196D5BF24">
-      <File Name="lineedits.exe" Source="!(bindpath.qt5)\examples\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
+      <File Source="!(bindpath.qt5)\examples\widgets\widgets\lineedits\lineedits.exe" KeyPath="yes"/>
       <Shortcut Id="MainShortcut" Directory="StartMenuDir" Name="Line Edit Example" Advertise="yes" />
     </Component>
 
     <Component Id="qtconf" Guid="BA23ECDF-6B88-494F-A343-42DFFBCDF1C1">
-      <File Name="qt.conf" Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
+      <File Source="!(bindpath.srcdir)\qt.conf" KeyPath="yes"/>
     </Component>
   </DirectoryRef>
 
