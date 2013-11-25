@@ -13,19 +13,13 @@ function(report_path var description)
     endif()
 endfunction()
 
-find_path(QT_LIBRARIES_PATH NAMES Qt5Core.dll PATH_SUFFIXES bin)
-report_path(QT_LIBRARIES_PATH "Qt5 libraries")
-find_path(QT_PLUGINS_PATH NAMES platforms/qwindows.dll PATH_SUFFIXES plugins)
-report_path(QT_PLUGINS_PATH "Qt5 plugins")
-find_path(QT_EXAMPLES_PATH NAMES widgets/widgets/lineedits/lineedits.exe PATH_SUFFIXES examples)
-report_path(QT_EXAMPLES_PATH "Qt5 examples")
+find_path(QT_PATH NAMES bin/Qt5Core.dll)
+report_path(QT_PATH "Qt5")
 
 wix_add_product(lineedits
     SOURCES main.wxs qt.wxs
     COMPILE_FLAGS -arch x86
     LINK_FLAGS
-        -b qt5=${QT_LIBRARIES_PATH}
-        -b qt5examples="${QT_EXAMPLES_PATH}"
-        -b qt5plugins="${QT_PLUGINS_PATH}"
+        -b qt5=${QT_PATH}
         -b srcdir="${CMAKE_SOURCE_DIR}"
 )
